@@ -39,7 +39,7 @@ public class Tests
         wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("[data-tid='Title']"))); 
     }
 
-    private string CreatedCommunity()
+    private void CreatedCommunity()
     {       
         driver.Navigate().GoToUrl("https://staff-testing.testkontur.ru/communities");
   
@@ -55,10 +55,7 @@ public class Tests
 
         wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("[data-tid='SettingsTabWrapper']")));
 
-        var url = driver.Url.Substring(0, driver.Url.Length - 9);
-        createdCommunityUrl = url;
-        
-        return url;
+        createdCommunityUrl = driver.Url.Substring(0, driver.Url.Length - 9);
     }
 
     private void DeleteCommunity()
